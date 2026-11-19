@@ -10,8 +10,7 @@ CREATE TABLE funcionario (
     usuario  VARCHAR(50)  NOT NULL,
     senha    VARCHAR(255) NOT NULL,
     cargo    VARCHAR(50)  NOT NULL,
-    -- TRUE = está com senha provisória (cadastro novo ou redefinida pelo gerente)
-    --        e precisa criar a própria senha no próximo login
+   
     precisa_trocar_senha  BOOLEAN NOT NULL DEFAULT FALSE,
     CONSTRAINT uq_funcionario_usuario UNIQUE (usuario)
 );

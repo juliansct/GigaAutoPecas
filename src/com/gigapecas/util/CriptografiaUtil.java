@@ -2,6 +2,7 @@ package com.gigapecas.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 
 public class CriptografiaUtil {
 
@@ -23,5 +24,16 @@ public class CriptografiaUtil {
         } catch (NoSuchAlgorithmException | java.io.UnsupportedEncodingException e) {
             throw new RuntimeException("Erro ao gerar hash da senha: " + e.getMessage());
         }
+    }
+
+    
+    private static final String CARACTERES = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+    private static final SecureRandom ALEATORIO = new SecureRandom();
+
+  
+    public static String gerarSenhaProvisoria() {
+        StringBuilder sb = new StringBuilder(8);
+        for (int i = 0; i < 8; i++) sb.append(CARACTERES.charAt(ALEATORIO.nextInt(CARACTERES.length())));
+        return sb.toString();
     }
 }

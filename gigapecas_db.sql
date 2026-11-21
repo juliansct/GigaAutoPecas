@@ -108,6 +108,7 @@ INSERT INTO categoria (nome, descricao) VALUES
 START TRANSACTION;
 
 INSERT INTO funcionario (nome, usuario, senha, cargo, precisa_trocar_senha) VALUES
+    ('Administrador',    'admin',   SHA2('1234', 256), 'Gerente de Estoque', TRUE),
     ('Mariana Costa',    'mariana', SHA2(UUID(), 256), 'Gerente de Vendas', TRUE),
     ('Carla Mendes',     'carla',   SHA2(UUID(), 256), 'Vendedor',          TRUE),
     ('João Pedro Silva', 'joao',    SHA2(UUID(), 256), 'Estoquista',        TRUE);

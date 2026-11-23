@@ -13,7 +13,7 @@ public class TelaCategorias extends TelaListagem {
     private final List<Categoria> linhas = new ArrayList<>();
 
     public TelaCategorias() {
-        super("Categorias", "Classificação das peças (usada no cadastro e como filtro)", "+ Nova Categoria",
+        super("Categorias", "Classificação das peças (usada no cadastro e como filtro)", "Nova Categoria",
                 new String[]{"Nome", "Descrição"});
         tabela.getColumnModel().getColumn(0).setMaxWidth(Integer.MAX_VALUE);
         tabela.getColumnModel().getColumn(0).setPreferredWidth(220);
